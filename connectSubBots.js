@@ -19,7 +19,7 @@ global.conns = global.conns || []
 
 export async function connectSubBots() {
   try {
-    const subBotDir = './BarbozaJadiBot/'
+    const subBotDir = './BotJadiBot/'
     if (!fs.existsSync(subBotDir)) {
       console.log(chalk.yellow('ℹ️ No hay subbots para reconectar.'))
       return
@@ -46,7 +46,7 @@ export async function connectSubBots() {
         const conn = makeWASocket({
           logger: pino({ level: 'silent' }),
           printQRInTerminal: false,
-          browser: ['BarbozaBot-AI', 'Desktop', '1.0.0'],
+          browser: ['MOB100-MD', 'Desktop', '1.0.0'],
           auth: {
             creds: state.creds,
             keys: makeCacheableSignalKeyStore(state.keys, pino({ level: "fatal" }))
